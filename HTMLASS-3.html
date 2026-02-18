@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Learning Course Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>SkillPro E-Learning — Certification Enrollment</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Introduction Video -->
+        <section>
+            <h2>Course Introduction</h2>
+
+            <video width="640" height="360" controls>
+                <source src="intro.mp4" type="video/mp4">
+                <source src="intro.webm" type="video/webm">
+
+                <!-- Subtitles -->
+                <track src="subtitles.vtt"
+                       kind="subtitles"
+                       srclang="en"
+                       label="English"
+                       default>
+
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- Enrollment Progress -->
+        <section>
+            <h2>Enrollment Progress</h2>
+            <progress value="40" max="100"></progress>
+        </section>
+
+        <!-- Registration Form -->
+        <section>
+            <h2>Register for Course</h2>
+
+            <form>
+
+                <!-- Student Name -->
+                <label>Full Name:</label><br>
+                <input type="text" name="name" required placeholder="Enter your name">
+                <br><br>
+
+                <!-- Email -->
+                <label>Email:</label><br>
+                <input type="email" name="email" required placeholder="example@mail.com">
+                <br><br>
+
+                <!-- Course Selection (Auto Suggestions) -->
+                <label>Select Course:</label><br>
+                <input list="courses" name="course" required>
+
+                <datalist id="courses">
+                    <option value="Full Stack Development">
+                    <option value="Data Science">
+                    <option value="Machine Learning">
+                    <option value="Cyber Security">
+                    <option value="Cloud Computing">
+                </datalist>
+                <br><br>
+
+                <!-- Batch Month -->
+                <label>Batch Month:</label><br>
+                <input type="month" name="batch" required>
+                <br><br>
+
+                <!-- Session Timing -->
+                <label>Preferred Session Time:</label><br>
+                <input type="time" name="session" required>
+                <br><br>
+
+                <!-- Skill Rating -->
+                <label>Skill Level (0–10):</label><br>
+                <input type="range"
+                       name="skill"
+                       min="0"
+                       max="10"
+                       value="5"
+                       oninput="skillOutput.value = this.value">
+                <output id="skillOutput">5</output>
+                <br><br>
+
+                <!-- Terms Agreement -->
+                <label>
+                    <input type="checkbox" required>
+                    I have watched the introduction video and agree to enroll
+                </label>
+                <br><br>
+
+                <!-- Submit -->
+                <input type="submit" value="Enroll Now">
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact: support@skillpro.com | Phone: +91 98765 43210</p>
+        <p>&copy; 2026 SkillPro E-Learning</p>
+    </footer>
+
+</body>
+</html>
