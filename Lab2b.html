@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Advanced Selectors</title>
+
+<style>
+.container > p { color: blue; }     /* Child */
+.container div p { color: red; }    /* Descendant */
+
+input[type="text"] { border: 2px solid green; }
+
+button:hover { background: orange; }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <p>Paragraph 1</p>
+  <div>
+    <p>Paragraph 2</p>
+  </div>
+</div>
+
+<input type="text" placeholder="Enter name">
+<button>Submit</button>
+
+</body>
+</html>
