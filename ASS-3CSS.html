@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ShopEasy</title>
+
+<style>
+.product-card {
+  display:inline-block;
+  width:200px;
+  padding:15px;
+  margin:15px;
+  border:1px solid black;
+  box-shadow:2px 2px 8px gray;
+}
+
+.product-card img { width:100%; }
+
+input[type="checkbox"] { margin:5px; }
+
+.product-card:hover {
+  transform:scale(1.05);
+  background:#f9f9f9;
+}
+
+.product-card:nth-child(even) { background:#eef; }
+
+button:hover { background:black; color:white; }
+
+#cart { border:2px solid black; padding:10px; margin:20px; }
+</style>
+
+</head>
+<body>
+
+<header><h1>ShopEasy</h1></header>
+
+<aside>
+<h3>Filters</h3>
+<input type="checkbox"> Electronics<br>
+<input type="checkbox"> Clothing
+</aside>
+
+<div class="product-card">
+<span style="background:red;color:white;">Limited Offer</span>
+<img src="https://via.placeholder.com/150">
+<h3>Product 1</h3>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://via.placeholder.com/150">
+<h3>Product 2</h3>
+<button>Add to Cart</button>
+</div>
+
+<div id="cart">Cart: 0 items</div>
+
+</body>
+</html>

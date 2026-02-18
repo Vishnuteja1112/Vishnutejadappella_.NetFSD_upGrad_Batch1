@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SmartLearn</title>
+
+<style>
+* { margin:0; padding:0; }
+
+nav { background:#333; color:white; padding:10px; }
+
+li:first-child { font-weight:bold; }
+
+#hero { background:lightblue; padding:40px; text-align:center; }
+
+.course {
+  display:inline-block;
+  width:200px;
+  margin:15px;
+  padding:15px;
+  border:1px solid black;
+  box-sizing:border-box;
+}
+
+.course > h3 { color:darkblue; }
+
+h3 + p { color:gray; }
+
+.course:hover { background:#eef; }
+
+a:hover { color:red; }
+</style>
+
+</head>
+<body>
+
+<div style="background:orange;padding:10px;text-align:center;">
+New Courses Available!
+</div>
+
+<nav>
+<ul>
+<li>Home</li>
+<li>Courses</li>
+<li>Contact</li>
+</ul>
+</nav>
+
+<section id="hero">
+<h1>Learn Skills Online</h1>
+</section>
+
+<div class="course">
+<h3>Web Development</h3>
+<p>HTML CSS JS</p>
+</div>
+
+<div class="course">
+<h3>Python</h3>
+<p>Beginner to Advanced</p>
+</div>
+
+<div class="course">
+<h3>Data Science</h3>
+<p>ML & AI</p>
+</div>
+
+</body>
+</html>

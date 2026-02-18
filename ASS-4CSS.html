@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SecureBank</title>
+
+<style>
+.sidebar { float:left; width:150px; background:#ddd; padding:20px; }
+
+.card {
+  display:inline-block;
+  margin:15px;
+  padding:15px;
+  border:1px solid black;
+  border-radius:10px;
+  box-sizing:border-box;
+}
+
+.balance { background:yellow; }
+
+tr:hover { background:#f0f0f0; }
+
+.credit { color:green; }
+.debit { color:red; }
+
+input[type="password"] { padding:8px; }
+
+button:active { background:black; color:white; }
+</style>
+
+</head>
+<body>
+
+<div style="background:red;color:white;padding:10px;">
+Warning: Unusual login detected
+</div>
+
+<header><h1>SecureBank Dashboard</h1></header>
+
+<div class="sidebar">Menu</div>
+
+<div class="card balance">Balance: ₹50,000</div>
+<div class="card">Savings: ₹20,000</div>
+
+<table border="1" style="margin:20px;">
+<tr><th>Date</th><th>Amount</th></tr>
+<tr><td>01 Jan</td><td class="credit">+5000</td></tr>
+<tr><td>02 Jan</td><td class="debit">-2000</td></tr>
+</table>
+
+<form style="margin:20px;">
+<input type="password" placeholder="Password">
+<button>Login</button>
+</form>
+
+</body>
+</html>
