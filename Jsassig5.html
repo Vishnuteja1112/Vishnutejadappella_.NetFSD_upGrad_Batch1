@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Analysis Tool</title>
+</head>
+
+<body>
+
+<h2>Number Analysis Tool</h2>
+
+<p id="result"></p>
+
+<script>
+
+let num = 7;
+
+/* Positive or Negative (Ternary) */
+let sign = (num >= 0) ? "Positive" : "Negative";
+
+/* Even or Odd */
+let parity;
+if (num % 2 === 0){
+  parity = "Even Number";
+}
+else{
+  parity = "Odd Number";
+}
+
+/* Print numbers from 1 to num */
+let sequence = "";
+for (let i = 1; i <= num; i++){
+  sequence += i + " ";
+}
+
+// Display on webpage
+document.getElementById("result").textContent =
+  "Number: " + num +
+  " | " + sign +
+  " | " + parity +
+  " | Sequence: " + sequence;
+
+// Also print in console
+console.log("Number:", num);
+console.log(sign);
+console.log(parity);
+console.log("Numbers from 1 to", num);
+
+for (let i = 1; i <= num; i++){
+  console.log(i);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background: lightblue;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  background: #333;
+}
+
+nav a {
+  color: white;
+  padding: 14px;
+  text-decoration: none;
+}
+
+/* Desktop font size */
+h1 { font-size: 36px; }
+
+/* 📱 Mobile Styles */
+@media (max-width: 768px) {
+
+  body {
+    background: lightcoral;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    border-bottom: 1px solid white;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+
+<h1>Responsive Web Page</h1>
+<p>This page adapts to mobile and desktop screens.</p>
+
+</body>
+</html>

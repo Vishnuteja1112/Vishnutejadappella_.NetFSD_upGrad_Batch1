@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discount Calculator</title>
+</head>
+
+<body>
+
+<h2>Simple Discount Calculator</h2>
+
+<p id="result"></p>
+
+<script>
+
+let amount = 4200;
+let discount = 0;
+
+if (amount >= 5000){
+  discount = amount * 0.20;
+}
+else if (amount >= 3000){
+  discount = amount * 0.10;
+}
+else{
+  discount = 0;
+}
+
+let finalAmount = amount - discount;
+
+// Display on webpage
+document.getElementById("result").textContent =
+  "Purchase Amount: ₹" + amount +
+  " | Discount: ₹" + discount +
+  " | Final Payable: ₹" + finalAmount;
+
+// Also print in console
+console.log("Purchase Amount:", amount);
+console.log("Discount:", discount);
+console.log("Final Payable:", finalAmount);
+
+</script>
+
+</body>
+</html>
