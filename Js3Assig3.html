@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Location Logger</title>
+</head>
+<body>
+
+<h2>Location Logger</h2>
+
+<button onclick="getLocation()">Get My Location</button>
+
+<p id="output"></p>
+
+<h3>Location History</h3>
+<ul id="history"></ul>
+
+<script>
+  function getLocation() {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+
+  function success(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+
+    document.getElementById("output").innerText =
+      "Latitude: " + lat + " Longitude: " + lon;
+
+    let history = JSON.parse(localStorage.getItem("locations")) || [];
+
+    history.unshift({ lat, lon });
+
+    // Keep only last 5
+    history = history.slice(0, 5);
+
+    localStorage.setItem("locations", JSON.stringify(history));
+
+    displayHistory();
+  }
+
+  function error(err) {
+    let msg = "";
+    switch (err.code) {
+      case 1: msg = "Permission denied"; break;
+      case 2: msg = "Location unavailable"; break;
+      case 3: msg = "Timeout"; break;
+    }
+    document.getElementById("output").innerText = msg;
+  }
+
+  function displayHistory() {
+    let history = JSON.parse(localStorage.getItem("locations")) || [];
+    let list = document.getElementById("history");
+    list.innerHTML = "";
+
+    history.forEach(loc => {
+      let li = document.createElement("li");
+      li.textContent = `Lat: ${loc.lat}, Lon: ${loc.lon}`;
+      list.appendChild(li);
+    });
+  }
+
+  window.onload = displayHistory;
+</script>
+
+</body>
+</html>
