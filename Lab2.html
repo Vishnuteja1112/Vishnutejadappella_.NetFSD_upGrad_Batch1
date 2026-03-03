@@ -1,32 +1,91 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <title>MY BIOGRAPHY </title>
-    <body>
-        <h1>INTRODUCTION ABOUT ME</h1>
-        <h2>VISHNU TEJA</h2>
-        <p>
-            MY NAME IS VISHNU I AM FROM KADAPA
-        </p>
-        <hr>
-        <h3>I am very big fan of marvel</h3>
-        <p>
-            I love to wtavh the marvel movies i like marvel hero.
-        </p>
-        <h4>
-            I like dance.
-        </h4>
-        <p>
-            I am very good at the dance 
-            i know water and energy formula
-            water=H<sub>2</sub>o<br>
-            Energy=E=MC<sup>2</sup>
-        </p>
-        <hr>
-        <h5>i a good singer</h5>
-        <p>I am very good singer like sid sriram</p>
-        <hr>
-        <h6>I love murgan</h6>
-        <p> <i>I am very big devoteee</i> of the <b>lord</b> murgan</p>
-        <hr>
-    </body>
+    <title>Lab 2 - DOM Manipulation</title>
+
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        li { margin: 5px 0; }
+        button { margin: 5px; }
+    </style>
 </head>
+
+<body>
+
+<h2>Lab 2 — DOM Manipulation</h2>
+
+<!-- Input -->
+<input type="text" id="taskInput" placeholder="Enter task">
+
+<br><br>
+
+<!-- Buttons -->
+<button id="btnText">Change Text</button>
+<button id="btnHtml">Change HTML</button>
+<button id="btnVal">Set Input Value</button>
+<button id="btnAdd">Add Task</button>
+<button id="btnClear">Clear All</button>
+
+<br><br>
+
+<!-- Text Area -->
+<p id="msg">Hello Teja 👋</p>
+
+<!-- Todo List -->
+<ul id="taskList"></ul>
+
+<!-- jQuery Code -->
+<script>
+
+$(document).ready(function () {
+
+    // 1. Change text using .text()
+    $("#btnText").click(function () {
+        $("#msg").text("Text changed using .text()");
+    });
+
+    // 2. Change HTML using .html()
+    $("#btnHtml").click(function () {
+        $("#msg").html("<b>Bold text using .html()</b>");
+    });
+
+    // 3. Change input value using .val()
+    $("#btnVal").click(function () {
+        $("#taskInput").val("Sample Task");
+    });
+
+    // 4. Add new element using .append()
+    $("#btnAdd").click(function () {
+
+        let task = $("#taskInput").val();
+
+        if (task !== "") {
+            $("#taskList").append(
+                "<li>" + task + 
+                " <button class='delete'>Delete</button></li>"
+            );
+
+            $("#taskInput").val(""); // clear input
+        }
+
+    });
+
+    // Delete single task (Event Delegation)
+    $("#taskList").on("click", ".delete", function () {
+        $(this).parent().remove();
+    });
+
+    // 5. Clear all tasks using .remove()
+    $("#btnClear").click(function () {
+        $("#taskList li").remove();
+    });
+
+});
+
+</script>
+
+</body>
+</html>

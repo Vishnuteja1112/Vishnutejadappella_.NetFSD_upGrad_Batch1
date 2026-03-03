@@ -1,25 +1,80 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>Image Gallery</title>
+    <title>Lab 4 - jQuery Effects</title>
+
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        #box {
+            width: 150px;
+            height: 150px;
+            background: steelblue;
+            margin-top: 20px;
+            color: white;
+            text-align: center;
+            line-height: 150px;
+        }
+        button { margin: 5px; }
+    </style>
 </head>
 
 <body>
 
-  <h1>My Image Gallery</h1>
+<h2>Lab 4 — jQuery Effects</h2>
 
-  <h2>Simple Image</h2>
-  <img src="vishnu.jpg" alt="Nature Image">
+<button id="hideBtn">Hide</button>
+<button id="showBtn">Show</button>
+<button id="toggleBtn">Toggle</button>
+<button id="fadeBtn">Fade</button>
+<button id="slideBtn">Slide</button>
+<button id="animateBtn">Animate</button>
 
-  <h2>Image with Width & Height</h2>
-  <img src="vishnu.jpg" width="300" height="200" alt="Mountain Image">
+<div id="box">BOX</div>
 
-  <h2>Clickable Image</h2>
-  <a href="https://www.google.com" target="_blank">
-    <img src="vishnu.jpg" width="300" alt="Clickable Image">
-  </a>
+<script>
+
+$(document).ready(function () {
+
+    // Hide
+    $("#hideBtn").click(function () {
+        $("#box").hide();
+    });
+
+    // Show
+    $("#showBtn").click(function () {
+        $("#box").show();
+    });
+
+    // Toggle
+    $("#toggleBtn").click(function () {
+        $("#box").toggle();
+    });
+
+    // Fade In/Out
+    $("#fadeBtn").click(function () {
+        $("#box").fadeToggle();
+    });
+
+    // Slide Up/Down
+    $("#slideBtn").click(function () {
+        $("#box").slideToggle();
+    });
+
+    // Custom Animation
+    $("#animateBtn").click(function () {
+        $("#box").animate({
+            width: "300px",
+            height: "200px",
+            fontSize: "25px"
+        });
+    });
+
+});
+
+</script>
 
 </body>
-
 </html>
