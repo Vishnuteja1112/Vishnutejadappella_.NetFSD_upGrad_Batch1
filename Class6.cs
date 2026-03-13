@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ASSIG1
+namespace Assigment2
 {
     internal class Class6
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Enter distance:");
-            int distance = int.Parse(Console.ReadLine());
+            Console.Write("Enter temperature in Fahrenheit: ");
+            double f = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter speed:");
-            int speed = int.Parse(Console.ReadLine());
+            double c = (f - 32) * 5 / 9;
 
-            int time = distance / speed;
-
-            Console.WriteLine($"Time taken for the journey is {time}");
+            Console.WriteLine("Temperature in Celsius: " + c);
         }
     }
 }

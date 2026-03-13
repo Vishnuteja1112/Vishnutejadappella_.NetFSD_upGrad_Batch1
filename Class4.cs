@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ASSIG1
+namespace Assigment2
 {
     internal class Class4
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number1:-");
-            int num1=int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter the number2:-");
-            int num2=int.Parse(Console.ReadLine());
-            if (num1 > num2)
-                Console.WriteLine($"{num1} is highest Number");
+            Console.Write("Enter number: ");
+            int num = int.Parse(Console.ReadLine());
+
+            if (num % 2 == 0)
+                Console.WriteLine("Even Number");
             else
-                Console.WriteLine($"{num2} is highest Number"); 
+                Console.WriteLine("Odd Number");
         }
     }
 }

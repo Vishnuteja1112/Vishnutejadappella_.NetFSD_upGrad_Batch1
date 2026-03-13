@@ -1,27 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ASSIG1
+namespace Assigment2
 {
     internal class Class7
     {
-        public void Main()
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Enter a string:");
-            string str = Console.ReadLine();
+            double total = 0;
 
-            char ch = str[2];s
+            Console.Write("Enter number of items: ");
+            int n = int.Parse(Console.ReadLine());
 
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
-                ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
+            for (int i = 0; i < n; i++)
             {
-                Console.WriteLine("The third character is a vowel");
+                Console.Write("Enter product number: ");
+                int p = int.Parse(Console.ReadLine());
+
+                Console.Write("Enter quantity: ");
+                int q = int.Parse(Console.ReadLine());
+
+                if (p == 1)
+                    total += 22.5 * q;
+                else if (p == 2)
+                    total += 44.5 * q;
+                else if (p == 3)
+                    total += 9.98 * q;
             }
-            else
-            {
-                Console.WriteLine("The third character is a consonant");
-            }
+
+            Console.WriteLine("Total price: " + total);
         }
     }
 }

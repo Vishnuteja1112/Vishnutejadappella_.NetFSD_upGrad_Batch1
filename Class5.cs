@@ -1,27 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ASSIG1
+namespace Assigment2
 {
     internal class Class5
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Enter length of rectangle:");
-            int length = int.Parse(Console.ReadLine());
+            int odd = 0, even = 0;
 
-            Console.WriteLine("Enter breadth of rectangle:");
-            int breadth = int.Parse(Console.ReadLine());
+            Console.Write("Enter count of numbers: ");
+            int n = int.Parse(Console.ReadLine());
 
-            int rectArea = length * breadth;
-            Console.WriteLine($"Area of Rectangle = {rectArea}");
+            for (int i = 0; i < n; i++)
+            {
+                int num = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter side of square:");
-            int side = int.Parse(Console.ReadLine());
+                if (num % 2 == 0)
+                    even++;
+                else
+                    odd++;
+            }
 
-            int squareArea = side * side;
-            Console.WriteLine($"Area of Square = {squareArea}");
+            Console.WriteLine("Even count: " + even);
+            Console.WriteLine("Odd count: " + odd);
         }
     }
 }

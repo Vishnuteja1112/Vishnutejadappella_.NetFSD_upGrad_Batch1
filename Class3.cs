@@ -1,22 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ASSIG1
+namespace Assigment2
 {
     internal class Class3
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number:-");
-            int num = int.Parse(Console.ReadLine());
-            if (num % 2 == 0)
+            if (args.Length >= 2)
             {
-                Console.WriteLine($"{num} is even number");
+                int num1 = int.Parse(args[0]);
+                int num2 = int.Parse(args[1]);
+
+                for (int i = num1 + 1; i < num2; i++)
+                {
+                    Console.WriteLine(i);
+                }
             }
             else
             {
-                Console.WriteLine($"{num} is odd number");
+                Console.WriteLine("Enter two numbers as command line arguments.");
             }
         }
     }
